@@ -1,10 +1,11 @@
 package mainpackage.testobjects;
 
-public class Student {
+public class Student implements Behavable {
 
 	private String name;
 	private String surname;
 	private int age;
+	private boolean handRaised;
 	
 	public String getName() {
 		return name;
@@ -31,11 +32,19 @@ public class Student {
 	}
 
 	@Override
+	public void raiseHand() {
+		handRaised = true;
+	}
+
+	@Override
+	public void shoutMark(int mark) {
+		System.out.println("My mark is " + mark);
+	}
+
+	@Override
 	public String toString() {
 		return "Student [name=" + name + ", surname=" + surname + ", age=" + age + "]";
 	}
-
-	
 	
 	
 }
